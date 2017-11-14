@@ -1,35 +1,35 @@
 import random
 import math
 
-randomList = ["string", 1.234, 28]
+numList = []
 
-oneToTen = list(range(10))
+for i in range(5):
+    numList.append(random.randrange(1,10))
 
-randomList =randomList + oneToTen
+i = len(numList) - 1
 
-print(randomList[0])
+while i > 0:
 
-print("List length :", len(randomList))
+    j = 0
 
-first3 = randomList[0:3]
+    while j < i:
 
-for i in first3:
-    print("{} : {}".format(first3.index(i), i ))
+        if numList[j] > numList[j + 1]:
 
-print(first3[0] * 3)
+            tymczasowe = numList[j]
+            numList[j] = numList[j + 1]
+            numList[j + 1] = tymczasowe
 
-print("string" in first3)
 
-print("Index of 'string' :", first3.index("string"))
-print("How many 'strings' :", first3.count("string"))
+        else:
+            print()
 
-first3[0] = "Hello"
+        j += 1
 
-for i in first3:
-    print("{} : {}".format(first3.index(i), i))
+    i -= 1
 
-first3.append("Another")
+for k in numList:
+    print(k, end=", ")
 
-for i in first3:
-    print("{} : {}".format(first3.index(i), i))
-    
+print()
+
